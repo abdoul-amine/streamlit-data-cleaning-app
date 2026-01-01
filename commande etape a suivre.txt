@@ -1,0 +1,75 @@
+Titre : Installation de Streamlit sur VS Code
+Sous-titre : Guide pas-à-pas pour créer des applications Python interactives
+
+				Introduction
+
+Streamlit : bibliothèque Python pour créer rapidement des applications interactives.
+
+Visual Studio Code : IDE puissant et léger pour Python.
+
+	Objectif : Installer Streamlit et lancer une première application.
+
+				1 – Prérequis
+				-Étape 1:
+Avoir Python 3.10+ installé sur votre machine.
+
+Avoir pip installé.
+
+Installer VS Code et l’extension Python.
+
+
+		-Étape 2 : Installer Streamlit
+Installer Streamlit dans l’environnement virtuel :
+
+.pip install streamlit
+au cas ou sa marche pas demande d'installer les autres bibliothèques egalement
+
+.pip install streamlit matplotlib pandas numpy
+ou
+
+
+
+
+Vérifier l’installation :
+.streamlit --version
+
+		-Étape 3 : Créer un fichier Python
+
+Créer un fichier app.py dans votre projet.
+
+Exemple minimal de code  :
+
+import streamlit as st
+
+st.title("Hello Streamlit!")
+st.write("Bienvenue dans votre première app Streamlit.")
+
+		-Étape 4 : Lancer l’application
+
+Dans le terminal VS Code :
+
+.streamlit run app.py(nom de l'application)
+ou python -m streamlit run app.py
+
+
+Le navigateur s’ouvre automatiquement avec votre application.
+
+Conseils supplémentaires
+
+Toujours activer l’environnement virtuel avant d’utiliser Streamlit.
+
+Pour mettre à jour Streamlit :
+.pip install --upgrade streamlit
+
+
+		*Étape: Créer un environnement virtuel(si jamais utuliser vs-code)
+
+Ouvrir VS Code et le terminal.
+
+Créer un environnement virtuel :
+python -m venv env
+
+
+Activer l’environnement :
+Windows : .\env\Scripts\activate
+Linux/Mac : source env/bin/activate
