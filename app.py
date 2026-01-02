@@ -11,9 +11,8 @@ st.set_page_config(
 st.title("📂 Application de Visualisation et Nettoyage de Données")
 st.write("Cette application permet d'uploader un fichier, visualiser les données, les nettoyer et les analyser.")
 
-# =========================
+
 # UPLOAD DU FICHIER
-# =========================
 st.subheader("📁 Upload du fichier CSV")
 uploaded_file = st.file_uploader("Choisissez un fichier CSV", type=["csv"])
 
@@ -25,15 +24,13 @@ if uploaded_file is not None:
 
     df = st.session_state.df
 
-    # =========================
+ 
     # APERCU DES DONNÉES
-    # =========================
     st.subheader("📊 Aperçu des données")
     st.dataframe(df, use_container_width=True)
 
-    # =========================
+
     # NETTOYAGE
-    # =========================
     st.subheader("🧹 Nettoyage des données")
 
     col1, col2 = st.columns(2)
@@ -60,9 +57,8 @@ if uploaded_file is not None:
 
     st.dataframe(df, use_container_width=True)
 
-    # =========================
+
     # VISUALISATION
-    # =========================
     st.subheader("📊 Visualisation des données")
 
     numeric_cols = df.select_dtypes(include=['int64', 'float64']).columns
@@ -83,15 +79,12 @@ if uploaded_file is not None:
     else:
         st.warning("⚠️ Aucune colonne numérique trouvée pour l'histogramme.")
 
-    # =========================
+
     # STATISTIQUES
-    # =========================
     st.subheader("📈 Statistiques descriptives")
     st.write(df.describe())
 
-    # =========================
     # TELECHARGEMENT
-    # =========================
     st.subheader("💾 Télécharger le dataset nettoyé")
     csv = df.to_csv(index=False).encode('utf-8')
 
@@ -102,9 +95,7 @@ if uploaded_file is not None:
         mime="text/csv"
     )
 
-    # =========================
     # RESET
-    # =========================
     if st.button("🔄 Réinitialiser le dataset"):
         del st.session_state.df
         st.success("Dataset réinitialisé. Rechargez le fichier.")
